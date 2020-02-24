@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<clinica id="Upopet" model="upopet.clinica"> 
+	<nombre>Upopet</nombre> 
+	<direccion>Ctra. de Utrera, km. 1</direccion>
+	<cp>41013</cp>
+	<telefono>954349200</telefono>
+<!-- Laboratorios -->
+ 	<distribuidores>
+		 <laboratorio id="A28456820" model="upopet.laboratorio"> 
+ 			<cif>A28456820</cif>
+			<nombre>Labnombre Normon SA</nombre> 
+		 	<direccion>Ronda de Valdecarrizo, 6</direccion>
+		 	<cp>28760</cp>
+		 	<telefono>918065240</telefono>
+			<!-- Medicamentos -->
+			<medicamentos>
+				<medicamento id="medicamento1" model="upopet.medicamento"> 
+	 				<nombre>Hyaloral</nombre> 
+	 				<referencia>975422134</referencia>
+	 				<precio>49.49</precio>
+	 				<fechaCaducidad>2027-03-23</fechaCaducidad>
+	 				<prospecto>Razas Grandes 120 comprimidos</prospecto>
+				</medicamento>
+				<medicamento id="medicamento2" model="upopet.medicamento"> 
+				 	<nombre>Stangest Anima Strath</nombre> 
+				 	<referencia>975422135</referencia>
+				 	<precio>10.94</precio>
+				 	<fechaCaducidad>2027-09-21</fechaCaducidad>
+				 	<prospecto>Suplemento Fortificante 100ml</prospecto>
+				</medicamento>	 	 	
+				<medicamento id="medicamento3" model="upopet.medicamento"> 
+				 	<nombre>Vetericyn Plus spray</nombre> 
+				 	<referencia>975422136</referencia>
+				 	<precio>9.29</precio>
+				 	<fechaCaducidad>2022-12-29</fechaCaducidad>
+				 	<prospecto>Desinfectante para mascotas 89 ml</prospecto>
+				</medicamento>	 	 	
+			</medicamentos>
+		</laboratorio> 
+
+		<laboratorio id="B85288785" model="upopet.laboratorio"> 
+ 			<cif>B85288785</cif> 
+		 	<nombre>Compharma SL</nombre> 
+		 	<direccion>Calle Centro Comercial, S/N</direccion>
+		 	<cp> 28770</cp>
+		 	<telefono>918438788</telefono>
+			<medicamentos>				
+				<medicamento id="medicamento4" model="upopet.medicamento"> 
+				 	<nombre>Condroprotector Plus</nombre> 
+				 	<referencia>975422137</referencia>
+				 	<precio>39.99</precio>
+				 	<fechaCaducidad>2021-01-01</fechaCaducidad>
+				 	<prospecto>150 comprimidos Barakaldo</prospecto>
+				</medicamento>
+				<medicamento id="medicamento5" model="upopet.medicamento"> 
+	 				<nombre>Flevox Gatos</nombre> 
+	 				<referencia>975422138</referencia>
+	 				<precio>80.94</precio>
+	 				<fechaCaducidad>2020-07-04</fechaCaducidad>
+	 				<prospecto>Antiparasitario externo 36 pipetas</prospecto>
+				</medicamento>
+				<medicamento id="medicamento6" model="upopet.medicamento"> 
+	 				<nombre>Flevox Perros</nombre> 
+	 				<referencia>975422777</referencia>
+	 				<precio>40.00</precio>
+	 				<fechaCaducidad>2020-07-08</fechaCaducidad>
+	 				<prospecto>Antiparasitario intestinal</prospecto>
+				</medicamento>		 	 	
+				<medicamento id="medicamento7" model="upopet.medicamento"> 
+				 	<nombre>Nacotil</nombre> 
+				 	<referencia>94444139</referencia>
+				 	<precio>15.50</precio>
+				 	<fechaCaducidad>2026-02-15</fechaCaducidad>
+				 	<prospecto>Tratamiento antibateriano y antifungico</prospecto>
+				</medicamento>
+			</medicamentos>	
+		</laboratorio>
+	</distribuidores>
+
+	<!-- Mascotas -->
+	<mascotas>
+		<mascota id="mascota1" model="upopet.mascota"> 
+		 	<numChip>45634216V-Miley</numChip> 
+		 	<nombre>Miley</nombre>
+		 	<especie>Perro</especie>
+		 	<raza>Labrador</raza>
+		 	<edad>0.8</edad>
+		 	<color>Negro</color>
+		 	<peso>15.0</peso>
+		 	<tamanio>50.2</tamanio>
+		 	<sexo>h</sexo>
+			 <!-- Visitas -->
+			<visitas>
+				<visita id="visita1" model="upopet.visita"> 
+				 	<patologia>Perdida de peso</patologia> 
+				 	<fecha>2019-01-16 15:00:00</fecha>
+				 	<observaciones>El animal perdio demasiado peso tras la cirugia</observaciones>
+				 	<veterinario>987213456</veterinario> 
+				 	<medicamento>medicamento1</medicamento>
+				</visita>
+				<visita id="visita2" model="upopet.visita"> 
+				 	<patologia>Deficit de vitaminas</patologia> 
+				 	<fecha>2019-05-20 18:30:00</fecha>
+				 	<observaciones>El animal no tiene fuerzas para andar</observaciones>
+				 	<veterinario>987213456</veterinario> 
+				 	<medicamento>medicamento2</medicamento>
+				</visita>
+			</visitas> 
+		</mascota> 
+
+		<mascota id="mascota2" model="upopet.mascota"> 
+		 	<numChip>34543678V-Tanos</numChip> 
+		 	<nombre>Tanos</nombre>
+		 	<especie>Perro</especie>
+		 	<raza>Bodeguero</raza>
+		 	<edad>1</edad>
+		 	<color>Marrón</color>
+		 	<peso>9.0</peso>
+		 	<tamanio>35.4</tamanio>
+		 	<sexo>m</sexo>
+			 <!-- Visitas -->
+			<visitas>
+				<visita id="visita3" model="upopet.visita"> 
+				 	<patologia>Vacuna</patologia> 
+				 	<fecha>2019-08-05 10:45:00</fecha>
+				 	<observaciones></observaciones>
+				 	<veterinario>987213456</veterinario> 
+				 	<medicamento></medicamento>
+					<vacuna>Si</vacuna>
+				</visita>
+				<visita id="visita5" model="upopet.visita"> 
+				 	<patologia>Parásitos intestinales</patologia> 
+				 	<fecha>2019-10-10 12:00:00</fecha>
+				 	<observaciones>Se ha comprobado el estado de las heces</observaciones>
+				 	<veterinario>987213456</veterinario> 
+				 	<medicamento>medicamento6</medicamento>
+				</visita>
+			</visitas> 
+		</mascota> 
+
+		<mascota id="mascota3" model="upopet.mascota"> 
+		 	<numChip>47658970M-Mina</numChip> 
+		 	<nombre>Mina</nombre>
+		 	<especie>Gato</especie>
+		 	<raza>Persa</raza>
+		 	<edad>5</edad>
+		 	<color>Blanco</color>
+		 	<peso>7.0</peso>
+		 	<tamanio>30.0</tamanio>
+		 	<sexo>h</sexo> 
+			 <!-- Visitas -->
+			<visitas>
+				<visita id="visita7" model="upopet.visita"> 
+				 	<patologia>Vacuna</patologia> 
+				 	<fecha>2019-09-10 13:45:00</fecha>
+				 	<observaciones>Primera Vacuna</observaciones>
+				 	<veterinario>987212231</veterinario> 
+				 	<medicamento></medicamento>
+					<vacuna>Si</vacuna>
+				</visita>
+				<visita id="visita9" model="upopet.visita"> 
+				 	<patologia>Parásitos externos</patologia> 
+				 	<fecha>2019-10-10 12:00:00</fecha>
+				 	<observaciones>Presenta Parásitos</observaciones>
+				 	<veterinario>987212231</veterinario> 
+				 	<medicamento>medicamento6</medicamento>
+				</visita>
+			</visitas> 
+		</mascota> 
+
+		<mascota id="mascota4" model="upopet.mascota"> 
+		 	<numChip>34543678V-Lucky</numChip> 
+		 	<nombre>Lucky</nombre>
+		 	<especie>Gato</especie>
+		 	<raza>Siamés</raza>
+		 	<edad>6</edad>
+		 	<color>Blanco</color>
+		 	<peso>5.0</peso>
+		 	<tamanio>30.0</tamanio>
+		 	<sexo>m</sexo> 
+			<!-- Visitas -->
+			<visitas>
+				<visita id="visita11" model="upopet.visita"> 
+				 	<patologia>Vacuna</patologia> 
+				 	<fecha>2019-09-16 12:45:00</fecha>
+				 	<observaciones>Primera Vacuna</observaciones>
+				 	<veterinario>987212231</veterinario> 
+				 	<medicamento></medicamento>
+					<vacuna>Si</vacuna>
+				</visita>
+				<visita id="visita16" model="upopet.visita"> 
+				 	<patologia>Molestias intestinales</patologia> 
+				 	<fecha>2019-10-26 12:30:00</fecha>
+				 	<observaciones>Presenta Parásitos</observaciones>
+				 	<veterinario>987212231</veterinario> 
+				 	<medicamento>medicamento4</medicamento>
+				</visita>
+			</visitas> 
+		</mascota>
+		
+		<mascota id="mascota5" model="upopet.mascota"> 
+		 	<numChip>34543678V-Nano</numChip> 
+		 	<nombre>Nano</nombre>
+		 	<especie>Perro</especie>
+		 	<raza>Yorkshire</raza>
+		 	<edad>8</edad>
+		 	<color>Marrón</color>
+		 	<peso>5.0</peso>
+		 	<tamanio>35.0</tamanio>
+		 	<sexo>m</sexo> 
+			<!-- Visitas -->
+			<visitas>
+				<visita id="visita15" model="upopet.visita"> 
+				 	<patologia>Vacuna</patologia> 
+				 	<fecha>2019-07-14 12:30:00</fecha>
+				 	<observaciones>Vacuna rutinaria</observaciones>
+				 	<veterinario>987212231</veterinario> 
+				 	<medicamento></medicamento>
+					<vacuna>Si</vacuna>
+				</visita>
+				<visita id="visita14" model="upopet.visita"> 
+				 	<patologia>Falta de Vitaminas</patologia> 
+				 	<fecha>2019-08-13 12:30:00</fecha>
+				 	<observaciones>El animal parece cansado</observaciones>
+				 	<veterinario>987213456</veterinario> 
+				 	<medicamento>medicamento2</medicamento>
+				</visita>
+				<visita id="visita18" model="upopet.visita"> 
+				 	<patologia>Sin patología</patologia> 
+				 	<fecha>2019-10-20 12:40:00</fecha>
+				 	<observaciones>Revision</observaciones>
+				 	<veterinario>987213456</veterinario> 
+				 	<medicamento></medicamento>
+				</visita>
+			</visitas> 
+		</mascota>
+		<mascota id="mascota6" model="upopet.mascota"> 
+		 	<numChip>34547778V-Mila</numChip> 
+		 	<nombre>Mila</nombre>
+		 	<especie>Perro</especie>
+		 	<raza>Yorkshire Mestizo</raza>
+		 	<edad>1</edad>
+		 	<color>Fuego</color>
+		 	<peso>2.0</peso>
+		 	<tamanio>20.0</tamanio>
+		 	<sexo>h</sexo> 
+			<!-- Visitas -->
+			<visitas>
+				<visita id="visita28" model="upopet.visita"> 
+				 	<patologia>Vacuna</patologia> 
+				 	<fecha>2019-10-10 09:30:00</fecha>
+				 	<observaciones>Primera revision, vacunas y chip</observaciones>
+				 	<veterinario>987212231</veterinario> 
+				 	<medicamento></medicamento>
+					<vacuna>Si</vacuna>
+					<chip>Si</chip>
+				</visita>
+			</visitas>
+		</mascota>
+
+		<mascota id="mascota7" model="upopet.mascota"> 
+		 	<numChip>4456578V-Xena</numChip> 
+		 	<nombre>Xena</nombre>
+		 	<especie>Perro</especie>
+		 	<raza>Pastor Belga</raza>
+		 	<edad>7</edad>
+		 	<color>Marrón</color>
+		 	<peso>10.0</peso>
+		 	<tamanio>40.0</tamanio>
+		 	<sexo>h</sexo> 
+			<!-- Visitas -->
+			<visitas>
+				<visita id="visita28" model="upopet.visita"> 
+				 	<patologia>Bacterias en los oidos</patologia> 
+				 	<fecha>2019-11-20 12:25:00</fecha>
+				 	<observaciones>Se le ha aplicado un tratamiento antibacteriano</observaciones>
+				 	<veterinario>987212231</veterinario> 
+				 	<medicamento>medicamento7</medicamento>
+					<vacuna>Si</vacuna>
+					<chip>Si</chip>
+				</visita>
+			</visitas>
+		</mascota>
+
+		<mascota id="mascota8" model="upopet.mascota"> 
+		 	<numChip>34543678V-Luna</numChip> 
+		 	<nombre>Luna</nombre>
+		 	<especie>Gato</especie>
+		 	<raza>Persa</raza>
+		 	<edad>3</edad>
+		 	<color>Blanco</color>
+		 	<peso>3.5</peso>
+		 	<tamanio>20.0</tamanio>
+		 	<sexo>h</sexo> 
+			<!-- Visitas -->
+			<visitas>
+				<visita id="visita21" model="upopet.visita"> 
+				 	<patologia>Vacuna</patologia> 
+				 	<fecha>2019-07-05 16:15:00</fecha>
+				 	<observaciones>Vacuna rutinaria</observaciones>
+				 	<veterinario>987212231</veterinario> 
+				 	<medicamento></medicamento>
+					<vacuna>Si</vacuna>
+				</visita>
+				<visita id="visita22" model="upopet.visita"> 
+				 	<patologia>Falta de Vitaminas</patologia> 
+				 	<fecha>2019-08-13 12:30:00</fecha>
+				 	<observaciones>El animal parece cansado</observaciones>
+				 	<veterinario>987213456</veterinario> 
+				 	<medicamento>medicamento2</medicamento>
+				</visita>
+				<visita id="visita23" model="upopet.visita"> 
+				 	<patologia>Sin patología</patologia> 
+				 	<fecha>2019-10-20 12:40:00</fecha>
+				 	<observaciones>Revision</observaciones>
+				 	<veterinario>987213456</veterinario> 
+				 	<medicamento></medicamento>
+				</visita>
+			</visitas> 
+		</mascota>
+
+		<mascota id="mascota9" model="upopet.mascota"> 
+		 	<numChip>34577678C-Lola</numChip> 
+		 	<nombre>Lola</nombre>
+		 	<especie>Gato</especie>
+		 	<raza>Británico bicolor</raza>
+		 	<edad>3</edad>
+		 	<color>Blanco y Negro</color>
+		 	<peso>3.5</peso>
+		 	<tamanio>20.0</tamanio>
+		 	<sexo>h</sexo> 
+			<!-- Visitas -->
+			<visitas>
+				<visita id="visita26" model="upopet.visita"> 
+				 	<patologia>Infección de útero y bacterias en el oído</patologia> 
+				 	<fecha>2019-07-08 16:15:00</fecha>
+				 	<observaciones>Hay que esterilizar</observaciones>
+				 	<veterinario>987212231</veterinario> 
+				 	<medicamento>medicamento6</medicamento>
+				</visita>
+				<visita id="visita27" model="upopet.visita"> 
+				 	<patologia>Falta de Vitaminas</patologia> 
+				 	<fecha>2019-07-09 12:30:00</fecha>
+				 	<observaciones>Operación y cirujía</observaciones>
+				 	<veterinario>987213456</veterinario> 
+				 	<medicamento>Analgésicos</medicamento>
+				</visita>
+				<visita id="visita28" model="upopet.visita"> 
+				 	<patologia>Sin patología</patologia> 
+				 	<fecha>2019-07-10 12:40:00</fecha>
+				 	<observaciones>Revision</observaciones>
+				 	<veterinario>987213456</veterinario> 
+				 	<medicamento></medicamento>
+				</visita>
+			</visitas> 
+		</mascota>
+
+		<mascota id="mascota10" model="upopet.mascota"> 
+		 	<numChip>4456579L-Zeus</numChip> 
+		 	<nombre>Zeus</nombre>
+		 	<especie>Perro</especie>
+		 	<raza>Pastor Alemán</raza>
+		 	<edad>5</edad>
+		 	<color>Marrón</color>
+		 	<peso>10.0</peso>
+		 	<tamanio>40.0</tamanio>
+		 	<sexo>m</sexo> 
+			<!-- Visitas -->
+			<visitas>
+				<visita id="visita31" model="upopet.visita"> 
+				 	<patologia>Lombrices intestinales</patologia> 
+				 	<fecha>2019-11-11 13:00:00</fecha>
+				 	<observaciones>Se ha procedido a desparasitar</observaciones>
+				 	<veterinario>987212231</veterinario> 
+				 	<medicamento>Pastilla desparasitante</medicamento>
+				</visita>
+			</visitas>
+		</mascota>
+	</mascotas>
+	<!-- Veterinarios -->
+	<veterinarios>
+		<veterinario id="987213456" model="upopet.veterinario"> 
+			<dni>35765909L</dni> 
+		 	<nombre>Alba</nombre>
+		 	<apellidos>Benítez Barrera</apellidos>
+		 	<direccion>Calle Viso del Alcor, 17</direccion>
+		 	<telefono>624354688</telefono>
+		 	<fechNac>1998-05-07</fechNac>
+		 	<email>albabb@gmail.com</email>
+		 	<Numerocoleg>987213456</Numerocoleg> 
+		 	<especialidad>Cirujía</especialidad>
+		 	<nomina>2500.30</nomina>
+		</veterinario>
+		<veterinario id="987212231" model="upopet.veterinario"> 
+			<dni>52535232A</dni> 
+		 	<nombre>Juan Alberto</nombre>
+		 	<apellidos>García Barroso</apellidos>
+		 	<direccion>Calle Metecaña, 1</direccion>
+		 	<telefono>624523696</telefono>
+		 	<fechNac>1956-01-07</fechNac>
+		 	<email>jagarbar@gmail.com</email>
+		 	<Numerocoleg>987212231</Numerocoleg> 
+		 	<especialidad>Atención general</especialidad>
+		 	<nomina>2850.20</nomina>
+		</veterinario>
+	</veterinarios>	
+</clinica>
