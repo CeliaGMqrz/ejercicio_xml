@@ -36,8 +36,11 @@ while True:
     elif opcion == "3":
 
         # Contar visitas por mascota, mostrando nombre y especie.
-        for mascota in contar_visitas(arbol):
-            print(mascota)
+        print ("MASCOTAS\tESPECIE\t\tVISITAS")
+        print ("________\t________\t________")
+        for m,e,v in zip (contar_visitas(arbol)[0],contar_visitas(arbol)[1],contar_visitas(arbol)[2]):
+            print(m,"\t\t",e,"\t\t  ",v)
+            
     
     elif opcion == "7":
         break

@@ -24,13 +24,16 @@ def listar_mascotas_raza(arbol,especie):
 
 def contar_visitas(arbol):
     lista_visitas = []
-    nombres_mascota= []
+    nombres_mascota = []
+    especies_mascota = []
     mascotas = arbol.xpath('//mascotas/mascota/nombre/text()')
     nombres_mascota = list(mascotas)
-    for mascota in arbol.xpath('//mascotas/mascota/nombre/text()'):
-        visitas = int(arbol.xpath('count(//visitas/visita'))
+    especies = arbol.xpath('//mascotas/mascota/especie/text()')
+    especies_mascota = list(especies)
+    for visita in arbol.xpath('//mascotas/mascota'):
+        visitas = int(visita.xpath('count(.//visita)'))
         lista_visitas.append(visitas)
-    conjunto = [nombres_mascota,lista_visitas]
+    conjunto = [nombres_mascota,especies_mascota,lista_visitas]
     return conjunto
 
 
