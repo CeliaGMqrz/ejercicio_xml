@@ -34,6 +34,7 @@ while True:
         for nombre in listar_mascotas(arbol):
             print(nombre)
         limpiar_continuar()
+        
     elif opcion == "2":
 
         # Listar mascotas y su raza por especie:
@@ -66,6 +67,7 @@ while True:
         limpiar_continuar()
 
     elif opcion == "4":
+
         # Recibe por teclado la especie y el sexo, y muestra el nombre, la edad y peso de las mascotas registradas.
         especie = input("Introduce la especie: ")
         especie = especie.capitalize()

@@ -23,7 +23,7 @@ def listar_mascotas_raza(arbol,especie):
 # y el número de visitas de cada una.
 
 def contar_visitas(arbol):
-    # Creamos las que vamos a utlizar para devolver los resultados
+    # Creamos las listas que vamos a utlizar para devolver los resultados
     lista_visitas = []
     nombres_mascota = []
     especies_mascota = []
@@ -45,17 +45,6 @@ def contar_visitas(arbol):
 #4.Flitrar: La función recibe dos parámetros (especie(gato,perro) y sexo(h,m)) y muestra el nombre, la edad y el peso 
 # de las mascotas econtradas.
 
-#def filtrar_mascotas(arbol,especie,sexo):
-#    nombres=[]
-#    edades=[]
-#    for mascota in arbol.xpath('//mascotas/mascota[especie={} and sexo= {}]'.format(especie,sexo)):
-#        nombres_mascota = mascota.xpath('//mascotas/mascota[especie={} and sexo={}]/./nombre/text()'.format(especie,sexo))
-#        edad_mascota = mascota.xpath('//mascotas/mascota[especie={} and sexo={}]/./edad/text()'.format(especie,sexo))
-#        nombres = list((nombres_mascota))
-#        edades = list ((edad_mascota))
-#    conjunto = [nombres,edades]
-#    return conjunto
-
 def filtrar_mascotas(arbol,especie,sexo):
     
     for mascota in arbol.xpath('//mascotas/mascota[especie="%s" and sexo="%s"]'%(especie,sexo)):
@@ -67,7 +56,7 @@ def filtrar_mascotas(arbol,especie,sexo):
     return filtro
 
  
-
+#Funciones para validar especie y sexo
 def validar_especie(especie):
     while especie not in ("Gato","Perro"):
         print ("\nNo existe la especie indicada.")
