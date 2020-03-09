@@ -61,16 +61,45 @@ def filtrar_mascotas(arbol,especie,sexo):
 
 def info_medicamento(arbol,medicamento):
     
+    #Usaremos los nombres de todos los medicamentos para validar la entrada de datos
+    medicamentos = arbol.xpath('//medicamentos/medicamento/nombre/text()')
+    
+    #Extraer el precio, nombre del laboratorio y telefono segun el medicamento indicado.
     precio = arbol.xpath('//medicamentos/medicamento[nombre="%s"]/./precio/text()'%medicamento)
     laboratorio = arbol.xpath('//medicamentos/medicamento[nombre="%s"]//../../../nombre/text()'%medicamento)
     telefono = arbol.xpath('//medicamentos/medicamento[nombre="%s"]//../../../telefono/text()'%medicamento)
-
-    filtro = [precio,laboratorio,telefono]
+    
+    #Filtrar la informacion
+    filtro = [precio,laboratorio,telefono,medicamentos]
     return filtro
 
 #6.Libre: Pide por teclado el número de chip de la mascota y muestra todas las visitas con la patología y el nombre del 
 # veterinario que le atendió en cada visita.
 
+def mostrar_visitas_mascota(arbol,chip):
+    
+    #Para validar la entrada de numero de chip
+    numero_chip = arbol.xpath('//mascotas/mascota/numChip/text()')
+
+    #Crear lista para los nombres de los veterinarios
+    vetes = []
+    for mascota in arbol.xpath('//mascotas/mascota[numChip="%s"]'%chip):
+        visitas = mascota.xpath('//mascotas/mascota[numChip="%s"]/./visitas/visita/@id'%chip)
+        patologias = mascota.xpath('//mascotas/mascota[numChip="%s"]/./visitas/visita/patologia/text()'%chip)
+        fechas = mascota.xpath('//mascotas/mascota[numChip="%s"]/./visitas/visita/fecha/text()'%chip)
+        ides = mascota.xpath('//mascotas/mascota[numChip="%s"]/./visitas/visita/veterinario/text()'%chip)
+    #vetes = list(ides)
+    #for i in vetes:
+
+    #Recorrer en la estructura veterinario para obtener el nombre de los veterinarios
+    #for vet in arbol.xpath('//veterinarios/veterinario'):
+    #    nombres_vet = vet.xpath('//veterinarios/veterinario/nombre/text()//../@id[contains(text(),"%s")]'%id)
+   
+
+    #for veterinario in arbol.xpath('//veterinarios/veterinario/@id')
+    
+    filtro = [visitas,patologias,fechas,ides,vetes]
+    return filtro
 
 
 

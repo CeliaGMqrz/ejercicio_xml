@@ -95,7 +95,15 @@ while True:
 
         medicamento = input("Introduce el nombre del medicamento: ")
         medicamento = medicamento.title()
-
+        
+        #validar medicamentos
+        lista = info_medicamento(arbol,medicamento)[3]
+        while medicamento not in lista:
+            print ("\nEl medicamento indicado no existe.")
+            medicamento = input("Introduce el nombre del medicamento: ")
+            medicamento = medicamento.title()
+        
+        #mostrar precio,nombre del laboratorio y telefono
         for p,l,t in zip (info_medicamento(arbol,medicamento)[0],info_medicamento(arbol,medicamento)[1],info_medicamento(arbol,medicamento)[2]):
             
             print("\n- Precio del fármaco: ",p)
@@ -103,11 +111,13 @@ while True:
             print("- Teléfono de contacto: ",t)
         limpiar_continuar()
 
-
-
-    #elif opcion == "6":
-    
-    
+    elif opcion == "6":
+    # Recibe el número de chip y devuelve el id de la visita y su patologia
+        chip = input("\nIntroduce el numero de chip: ")
+        print(mostrar_visitas_mascota(arbol,chip))
+        #for visita,pat in zip (mostrar_visitas_mascota(arbol,chip)[0],mostrar_visitas_mascota(arbol,chip)[1]):
+        #    print (pat)
+        limpiar_continuar()
     
     
     elif opcion == "*":
