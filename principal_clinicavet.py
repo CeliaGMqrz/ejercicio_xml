@@ -10,9 +10,7 @@ import os
 def limpiar_continuar():
     continuar = input("...\npulsa Enter para continuar.")
         
-
 # MENU 
-
 while True:
     os.system('clear')
     print()
@@ -29,26 +27,25 @@ while True:
     opcion = input("Introduce la opción deseada: ")
 
     if opcion == "1":
-
-        # Listar mascotas:
+    # Listar mascotas:
+    
         for nombre in listar_mascotas(arbol):
             print(nombre)
         limpiar_continuar()
-        
-    elif opcion == "2":
 
-        # Listar mascotas y su raza por especie:
+    elif opcion == "2":
+    # Listar mascotas y su raza por especie:
 
         especie = input("Introduce la especie: ")
         especie = especie.capitalize()
 
-        #validar especie
+        # Validar especie
         while especie not in ("Gato","Perro"):
             print ("\nNo existe la especie indicada.")
             especie = input("Introduce la especie: ")
             especie = especie.capitalize()
         
-
+        # Imprimir mascota y raza
         print ()
         print ("MASCOTAS      RAZA  ")
         print ("________    ________")
@@ -58,8 +55,8 @@ while True:
 
 
     elif opcion == "3":
-
-        # Contar visitas por mascota, mostrando nombre y especie.
+    # Contar visitas por mascota, mostrando nombre y especie.
+        
         print ("MASCOTAS\tESPECIE\t\tVISITAS")
         print ("________\t________\t________")
         for m,e,v in zip (contar_visitas(arbol)[0],contar_visitas(arbol)[1],contar_visitas(arbol)[2]):
@@ -67,31 +64,54 @@ while True:
         limpiar_continuar()
 
     elif opcion == "4":
-
-        # Recibe por teclado la especie y el sexo, y muestra el nombre, la edad y peso de las mascotas registradas.
+    # Recibe por teclado la especie y el sexo, y muestra el nombre, la edad y peso de las mascotas registradas.
+        
         especie = input("Introduce la especie: ")
         especie = especie.capitalize()
 
-        #Validar especie
+        # Validar especie
         while especie not in ("Gato","Perro"):
             print ("\nNo existe la especie indicada.")
             especie = input("Introduce la especie: ")
             especie = especie.capitalize()
 
         sexo = input("Introduce el sexo: ")
-        #Validar sexo        
+        
+        # Validar sexo        
         while sexo not in ("h","m"):
             print("\nValor incorrecto. Introduce 'h' (hembra) o 'm' (macho).")
             sexo = input("Introduce el sexo:")
 
-        #Mostrar nombre, edad y peso
+        # Mostrar nombre, edad y peso
         print("MASCOTA\tEDAD\tPESO")
         print("______  _____\t______")
         for nombre,edad,peso in zip (filtrar_mascotas(arbol,especie,sexo)[0],filtrar_mascotas(arbol,especie,sexo)[1],filtrar_mascotas(arbol,especie,sexo)[2]):
             print(nombre,"\t",edad,"\t",peso)
         limpiar_continuar()
 
+    
+    elif opcion == "5":
+    # Recibe por teclado el nombre de un medicamento registrado, muestra el precio y el nombre y telefono de su distribuidor.
+
+        medicamento = input("Introduce el nombre del medicamento: ")
+        medicamento = medicamento.title()
+
+        for p,l,t in zip (info_medicamento(arbol,medicamento)[0],info_medicamento(arbol,medicamento)[1],info_medicamento(arbol,medicamento)[2]):
+            
+            print("\n- Precio del fármaco: ",p)
+            print("- Nombre del laboratorio: ",l)
+            print("- Teléfono de contacto: ",t)
+        limpiar_continuar()
+
+
+
+    #elif opcion == "6":
+    
+    
+    
+    
     elif opcion == "*":
+        print("Programa terminado.")
         break
 
     else:

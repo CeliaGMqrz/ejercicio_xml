@@ -56,22 +56,17 @@ def filtrar_mascotas(arbol,especie,sexo):
     return filtro
 
  
-#Funciones para validar especie y sexo
-def validar_especie(especie):
-    while especie not in ("Gato","Perro"):
-        print ("\nNo existe la especie indicada.")
-        especie = input("Introduce la especie: ")
-        especie = especie.capitalize()
-    return especie
-
-def validar_sexo(sexo):
-    while sexo not in ("h","m"):
-        print("\nValor incorrecto. Introduce 'h' (hembra) o 'm' (macho).")
-        sexo = input("Introduce el sexo:")
-        sexo = sexo.lower()
-
 #5.Informacion relacionada: La función recibe por teclado el nombre de un medicamento y muestra su precio pero además 
 # muestra el nombre del laboratorio que lo distribuye y el teléfono.
+
+def info_medicamento(arbol,medicamento):
+    
+    precio = arbol.xpath('//medicamentos/medicamento[nombre="%s"]/./precio/text()'%medicamento)
+    laboratorio = arbol.xpath('//medicamentos/medicamento[nombre="%s"]//../../../nombre/text()'%medicamento)
+    telefono = arbol.xpath('//medicamentos/medicamento[nombre="%s"]//../../../telefono/text()'%medicamento)
+
+    filtro = [precio,laboratorio,telefono]
+    return filtro
 
 #6.Libre: Pide por teclado el número de chip de la mascota y muestra todas las visitas con la patología y el nombre del 
 # veterinario que le atendió en cada visita.

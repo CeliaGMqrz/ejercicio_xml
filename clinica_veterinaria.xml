@@ -6,7 +6,7 @@
 	<telefono>954349200</telefono>
 <!-- Laboratorios -->
  	<distribuidores>
-		 <laboratorio id="A28456820" model="upopet.laboratorio"> 
+		<laboratorio id="A28456820" model="upopet.laboratorio"> 
  			<cif>A28456820</cif>
 			<nombre>Labnombre Normon SA</nombre> 
 		 	<direccion>Ronda de Valdecarrizo, 6</direccion>
@@ -29,7 +29,7 @@
 				 	<prospecto>Suplemento Fortificante 100ml</prospecto>
 				</medicamento>	 	 	
 				<medicamento id="medicamento3" model="upopet.medicamento"> 
-				 	<nombre>Vetericyn Plus spray</nombre> 
+				 	<nombre>Vetericyn Plus Spray</nombre> 
 				 	<referencia>975422136</referencia>
 				 	<precio>9.29</precio>
 				 	<fechaCaducidad>2022-12-29</fechaCaducidad>
