@@ -41,7 +41,11 @@ while True:
         for m,e,v in zip (contar_visitas(arbol)[0],contar_visitas(arbol)[1],contar_visitas(arbol)[2]):
             print(m,"\t\t",e,"\t\t  ",v)
             
-    
+    elif opcion == "4":
+        especie = input("Introduce la especie: ")
+        sexo = input("Introduce el sexo: ")
+        for nombre,edad in zip (filtrar_mascotas(arbol,especie,sexo)[0],filtrar_mascotas(arbol,especie,sexo)[1]):
+            print(nombre,edad)
     elif opcion == "7":
         break
     else:
