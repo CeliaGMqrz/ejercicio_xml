@@ -45,19 +45,42 @@ def contar_visitas(arbol):
 #4.Flitrar: La función recibe dos parámetros (especie(gato,perro) y sexo(h,m)) y muestra el nombre, la edad y el peso 
 # de las mascotas econtradas.
 
-def filtrar_mascotas(arbol,especie,sexo):
-    nombres=[]
-    edades=[]
-    for mascota in arbol.xpath('//mascotas/mascota[especie={} and sexo= {}]'.format(especie,sexo)):
-        nombres_mascota = mascota.xpath('//mascotas/mascota[especie={} and sexo={}]/./nombre/text()'.format(especie,sexo))
-        edad_mascota = mascota.xpath('//mascotas/mascota[especie={} and sexo={}]/./edad/text()'.format(especie,sexo))
-        nombres = list((nombres_mascota))
-        edades = list ((edad_mascota))
-    conjunto = [nombres,edades]
-    return conjunto
+#def filtrar_mascotas(arbol,especie,sexo):
+#    nombres=[]
+#    edades=[]
+#    for mascota in arbol.xpath('//mascotas/mascota[especie={} and sexo= {}]'.format(especie,sexo)):
+#        nombres_mascota = mascota.xpath('//mascotas/mascota[especie={} and sexo={}]/./nombre/text()'.format(especie,sexo))
+#        edad_mascota = mascota.xpath('//mascotas/mascota[especie={} and sexo={}]/./edad/text()'.format(especie,sexo))
+#        nombres = list((nombres_mascota))
+#        edades = list ((edad_mascota))
+#    conjunto = [nombres,edades]
+#    return conjunto
 
+def filtrar_mascotas(arbol,especie,sexo):
+    
+    for mascota in arbol.xpath('//mascotas/mascota[especie="%s" and sexo="%s"]'%(especie,sexo)):
+        nombres_mascota = mascota.xpath('//mascotas/mascota[especie="%s" and sexo="%s"]/./nombre/text()'%(especie,sexo))
+        edad_mascota = mascota.xpath('//mascotas/mascota[especie="%s" and sexo="%s"]/./edad/text()'%(especie,sexo))
+        peso_mascota = mascota.xpath('//mascotas/mascota[especie="%s" and sexo="%s"]/./peso/text()'%(especie,sexo))
+
+    filtro = [nombres_mascota,edad_mascota,peso_mascota]
+    return filtro
 
  
+
+def validar_especie(especie):
+    while especie not in ("Gato","Perro"):
+        print ("\nNo existe la especie indicada.")
+        especie = input("Introduce la especie: ")
+        especie = especie.capitalize()
+    return especie
+
+def validar_sexo(sexo):
+    while sexo not in ("h","m"):
+        print("\nValor incorrecto. Introduce 'h' (hembra) o 'm' (macho).")
+        sexo = input("Introduce el sexo:")
+        sexo = sexo.lower()
+
 #5.Informacion relacionada: La función recibe por teclado el nombre de un medicamento y muestra su precio pero además 
 # muestra el nombre del laboratorio que lo distribuye y el teléfono.
 
