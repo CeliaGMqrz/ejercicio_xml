@@ -21,8 +21,8 @@ while True:
     print(" OPCIÓN 3: Muestra el número de visitas registradas por mascota.")
     print(" OPCIÓN 4: Introduce especie y sexo. Muestra el nombre, edad y peso de las mascotas encontradas.")
     print(" OPCIÓN 5: Muestra el precio, nombre del distribuidor y teléfono de un medicamento.")
-    print(" OPCIÓN 6: Introduce el numero de chip. Muestra las visitas, patología y nombre del veterinario que le atendió.")
-    print(" SALIR: Introduce un '*'.")
+    print(" OPCIÓN 6: Muestra las visitas con la fecha, patología y nombre del veterinario que le atendió.")
+    print(" SALIR: Introduce 'exit' para salir.")
     print()
     opcion = input("Introduce la opción deseada: ")
 
@@ -41,10 +41,10 @@ while True:
 
         # Validar especie
         while especie not in ("Gato","Perro"):
-            print ("\nNo existe la especie indicada.")
+            print ("\nNo existe la especie indicada.Introduzca 'gato' o 'perro'")
             especie = input("Introduce la especie: ")
             especie = especie.capitalize()
-        
+
         # Imprimir mascota y raza
         print ()
         print ("MASCOTAS      RAZA  ")
@@ -99,28 +99,53 @@ while True:
         #validar medicamentos
         lista = info_medicamento(arbol,medicamento)[3]
         while medicamento not in lista:
-            print ("\nEl medicamento indicado no existe.")
+            print ("\nEl medicamento indicado no está registrado o no es válido.")
+            print("\nLista de medicamentos registrados:")
+            for i in lista:
+                print(i)
             medicamento = input("Introduce el nombre del medicamento: ")
             medicamento = medicamento.title()
         
         #mostrar precio,nombre del laboratorio y telefono
         for p,l,t in zip (info_medicamento(arbol,medicamento)[0],info_medicamento(arbol,medicamento)[1],info_medicamento(arbol,medicamento)[2]):
-            
             print("\n- Precio del fármaco: ",p)
             print("- Nombre del laboratorio: ",l)
             print("- Teléfono de contacto: ",t)
         limpiar_continuar()
 
     elif opcion == "6":
-    # Recibe el número de chip y devuelve el id de la visita y su patologia
+    # Recibe el número de chip y devuelve el id de la visita,fecha,patologia y veterinario
+   
+        numero_chip = arbol.xpath('//mascotas/mascota/numChip/text()')
+        lista_chips = list(numero_chip)
+        print()
+        print("Bienvenido a la búsqueda de visitas:")
+        print ("\nLISTA CHIPS MASCOTAS:")
+        #Listar chips
+        for i in lista_chips:
+            print(i)        
+        
         chip = input("\nIntroduce el numero de chip: ")
-        print(mostrar_visitas_mascota(arbol,chip))
-        #for visita,pat in zip (mostrar_visitas_mascota(arbol,chip)[0],mostrar_visitas_mascota(arbol,chip)[1]):
-        #    print (pat)
+        #validar chip
+        while chip not in lista_chips and chip != "exit":
+            print ("Número de chip erróneo.")
+            print("Introduce el número de chip correcto // Introduce 'exit' para volver al menu principal")
+            chip = input("\n- ")
+        #Volver al menu principal
+        if chip == "exit":
+            continue
+        #Mostrar los resultados:
+        for visita,pat,fecha,ide in zip (mostrar_visitas_mascota(arbol,chip)[0],mostrar_visitas_mascota(arbol,chip)[1],mostrar_visitas_mascota(arbol,chip)[2],mostrar_visitas_mascota(arbol,chip)[3]):
+            print ("\nId visita: ",visita)
+            print("Motivo/Patología: ",pat)
+            print("Fecha: ",fecha)
+            if ide == "987213456":
+                print ("Le atendió: Alba")
+            else:
+                print ("Le atendió: Juan Alberto")
         limpiar_continuar()
-    
-    
-    elif opcion == "*":
+
+    elif opcion == "exit":
         print("Programa terminado.")
         break
 

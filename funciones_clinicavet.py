@@ -79,26 +79,15 @@ def info_medicamento(arbol,medicamento):
 def mostrar_visitas_mascota(arbol,chip):
     
     #Para validar la entrada de numero de chip
-    numero_chip = arbol.xpath('//mascotas/mascota/numChip/text()')
 
     #Crear lista para los nombres de los veterinarios
-    vetes = []
     for mascota in arbol.xpath('//mascotas/mascota[numChip="%s"]'%chip):
         visitas = mascota.xpath('//mascotas/mascota[numChip="%s"]/./visitas/visita/@id'%chip)
         patologias = mascota.xpath('//mascotas/mascota[numChip="%s"]/./visitas/visita/patologia/text()'%chip)
         fechas = mascota.xpath('//mascotas/mascota[numChip="%s"]/./visitas/visita/fecha/text()'%chip)
         ides = mascota.xpath('//mascotas/mascota[numChip="%s"]/./visitas/visita/veterinario/text()'%chip)
-    #vetes = list(ides)
-    #for i in vetes:
-
-    #Recorrer en la estructura veterinario para obtener el nombre de los veterinarios
-    #for vet in arbol.xpath('//veterinarios/veterinario'):
-    #    nombres_vet = vet.xpath('//veterinarios/veterinario/nombre/text()//../@id[contains(text(),"%s")]'%id)
-   
-
-    #for veterinario in arbol.xpath('//veterinarios/veterinario/@id')
     
-    filtro = [visitas,patologias,fechas,ides,vetes]
+    filtro = [visitas,patologias,fechas,ides]
     return filtro
 
 
